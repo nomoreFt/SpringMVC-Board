@@ -32,14 +32,14 @@
 			</tr>
 			<tr>
 				<td> 제목 </td>
-				<td> <input type="text" name="bTitle" value="${reply_view.bTitle}"></td>
+				<td> <input style="width: 1100px" type="text" name="bTitle" value="${reply_view.bTitle}"></td>
 			</tr>
 			<tr>
 				<td> 내용 </td>
-				<td> <textarea rows="10"  name="bContent">${reply_view.bContent}</textarea></td>
+				<td> <textarea style="width: 1100px" rows="10"  name="bContent">${reply_view.bContent}</textarea></td>
 			</tr>
 			<tr >
-				<td colspan="2"><input type="submit" value="답변"> <a href="list" >목록</a></td>
+				<td colspan="2"><input class = "btn btn-success pull-right" type="submit" value="답변"> <a href="list" >목록</a></td>
 			</tr>
 		</form>
 	</table>

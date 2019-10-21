@@ -58,8 +58,8 @@
          var content = $(this).closest('tr').find('#hidden_content').val();
          var htmls = '<td>'+userId+'</td>';
           htmls += "<td><textarea style=\"width: 500px\" rows=\"3\" cols=\"30\" id=\"content2\" name=\"content\" placeholder="+content+"></textarea></td>";
-           htmls += "<td><button onclick=\"commentModify("+cId+","+bId+")\">저장</button></td>";
-          htmls += "<td><button onclick=\"commentList()\">취소</button></td>"; 
+           htmls += "<td><button  class = \"btn btn-success\" onclick=\"commentModify("+cId+","+bId+")\">저장</button></td>";
+          htmls += "<td><button  class = \"btn btn-default\" onclick=\"commentList()\">취소</button></td>"; 
          $(this).closest('tr').html(htmls);
       
       });//수정 버튼 클릭
@@ -139,8 +139,8 @@
          $('<tr id = '+item.cId+'>')
          .append($('<td>').html(item.userId))
          .append($('<td>').html(item.content))
-         .append($('<td>').html('<button id=\'btnUpdate\'>수정</button>'))
-         .append($('<td>').html('<button id=\'btnDelete\'>삭제</button>'))
+         .append($('<td>').html('<button class = "btn btn-default" id=\'btnUpdate\'>수정</button>'))
+         .append($('<td>').html('<button  class = "btn btn-danger" id=\'btnDelete\'>삭제</button>'))
          .append($('<input type=\'hidden\' id=\'hidden_bId\'>').val(item.bId))
          .append($('<input type=\'hidden\' id=\'hidden_cId\'>').val(item.cId))
          .append($('<input type=\'hidden\' id=\'hidden_content\'>').val(item.content))
@@ -155,7 +155,6 @@
 <body>
 <div class="container">
    <form id="form1"  class="form-horizontal">
-      <h2>사용자 등록</h2>
       <div class="form-group">      
       <input type="hidden" name="bId" value="64">
          <label >아이디:</label>
@@ -164,9 +163,8 @@
       <div class="form-group">
          <label>콘텐츠:</label>
           <textarea style="width: 1100px" rows="3" cols="30" id="content" name="content" placeholder="댓글을 입력하세요"></textarea>
-         <!-- <input type="text"  class="form-control"  name="content" > -->
+		 <input type="button"  class="btn btn-primary pull-right" value="등록"  id="btnInsert" /> 
       </div>   
-      
    </form>
 </div>      
 <hr/>      
@@ -182,7 +180,7 @@
       <tbody id="commentBody"></tbody>
       <tfoot>
       <div class="btn-group">      
-            <input type="button"  class="btn btn-primary" value="등록"  id="btnInsert" /> 
+           
       </div>
       </tfoot>
    </table>

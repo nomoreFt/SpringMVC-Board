@@ -28,18 +28,18 @@
 			</tr>
 			<tr>
 				<td> 제목 </td>
-				<td> <input type="text" name="bTitle" value="${contentOne.bTitle}"></td>
+				<td> <input style="width: 1100px" type="text" name="bTitle" value="${contentOne.bTitle}"></td>
 			</tr>
 			<tr>
 				<td> 내용 </td>
-				<td> <textarea rows="10" name="bContent" >${contentOne.bContent}</textarea></td>
+				<td> <textarea style="width: 1100px" rows="10" name="bContent" >${contentOne.bContent}</textarea></td>
 			</tr>
-			<tr >
-				<td colspan="2"> <input type="submit" value="수정"> &nbsp;&nbsp; <a href="${cp}/board/showList?pagenum=1&contentnum=10">목록보기</a> &nbsp;&nbsp; <a href="${cp}/board/delete?bId=${contentOne.bId}">삭제</a> &nbsp;&nbsp; <a href="${cp}/board/replyView?bId=${contentOne.bId}">답변</a></td>
+			<tr>
+				<td colspan="2">  <a href="${cp}/board/delete?bId=${contentOne.bId}"  class = "btn btn-danger pull-right">삭제</a> &nbsp;&nbsp; <a href="${cp}/board/showList?pagenum=1&contentnum=10" >목록보기</a> &nbsp;&nbsp; &nbsp;&nbsp; <a href="${cp}/board/replyView?bId=${contentOne.bId}" class = "btn btn-default" >답변</a><input type="submit" value="수정"  class = "btn btn-warning pull-right"></td>
 			</tr>
 		</form>
 	</table>
-	
+	<hr/>
 	<%@ include file="/WEB-INF/views/board/comment.jsp" %>
 	
 </body>
