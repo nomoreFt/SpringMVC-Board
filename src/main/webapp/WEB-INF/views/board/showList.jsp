@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 <!-- Optional theme -->
@@ -12,16 +12,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" />
 <script type="text/javascript">
-
-
 </script>
-
-
-
 </head>
+
+
 <body>
-
-
 
 	<table class = "table table-hover">
 		<thead>
@@ -63,25 +58,6 @@
 						</c:if>
 						</li>
 </ul>
-<%-- 
-			<tr>
-				<td colspan="2">
-				<c:if test="${page.prev}">
-						<a style="text-decoration: none;" href="${cp}/board/showList?pagenum=${page.getStartPage()-1}&contentnum=10">&laquo;</a>
-						
-           					</c:if> 
-					<c:forEach begin="${page.getStartPage()}" end="${page.getEndPage()}" var="idx">
-						<a style="text-decoration: none;" href="${cp}/board/showList?pagenum=${idx}&contentnum=10">${idx}</a>
-					</c:forEach> 
-					<c:if test="${page.next}">
-						<a style="text-decoration: none" href="${cp}/board/showList?pagenum=${page.getEndPage()+1}&contentnum=10">&raquo;</a>
-					</c:if>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="5"><a href="${cp}/board/writeView">글작성</a></td>
-			</tr> --%>
-	
 </div>
 
 </body>
