@@ -5,9 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<table width="500" cellpadding="0" cellspacing="0" border="1">
+	<table class = "table table-hover">
 		<form action="${cp}/board/modify" method="post">
 			<input type="hidden" name="bId" value="${contentOne.bId}">
 			<tr>
@@ -31,7 +35,7 @@
 				<td> <textarea rows="10" name="bContent" >${contentOne.bContent}</textarea></td>
 			</tr>
 			<tr >
-				<td colspan="2"> <input type="submit" value="수정"> &nbsp;&nbsp; <a href="${cp}/board/showList">목록보기</a> &nbsp;&nbsp; <a href="${cp}/board/delete?bId=${contentOne.bId}">삭제</a> &nbsp;&nbsp; <a href="${cp}/board/replyView?bId=${contentOne.bId}">답변</a></td>
+				<td colspan="2"> <input type="submit" value="수정"> &nbsp;&nbsp; <a href="${cp}/board/showList?pagenum=1&contentnum=10">목록보기</a> &nbsp;&nbsp; <a href="${cp}/board/delete?bId=${contentOne.bId}">삭제</a> &nbsp;&nbsp; <a href="${cp}/board/replyView?bId=${contentOne.bId}">답변</a></td>
 			</tr>
 		</form>
 	</table>

@@ -157,7 +157,7 @@ public class BoardController {
 		result.put("result", Boolean.TRUE);
 		return result;
 	}
-	@RequestMapping(value = "/comment", method = RequestMethod.PUT, headers = { "Content-type=application/json" })
+	@RequestMapping(value = "/commentModify", method = RequestMethod.POST, headers = { "Content-type=application/json" })
 	@ResponseBody
 	public Map updateComment(@RequestBody CommentVo comment) {
 		if (comment != null)

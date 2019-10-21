@@ -6,14 +6,13 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" />
 <script type="text/javascript">
 
-/*  function page(idx){
-	var pagenum =idx;
-	var contentnum =$("#contentnum option:selected").val();
-	location.href="${cp}/board/showList?pagenum="+pagenum+"&contentnum="+contentnum;
-}  */
 
 </script>
 
@@ -22,14 +21,9 @@
 </head>
 <body>
 
-	<select name="contentnum" id="contentnum">
-		<option value="10">10</option>
-		<option value="20">20</option>
-		<option value="30">30</option>
 
-	</select>
 
-	<table>
+	<table class = "table table-hover">
 		<thead>
 			<tr>
 				<td>번호</td>
@@ -45,7 +39,7 @@
 				<tr>
 					<td>${dto.bId}</td>
 					<td>${dto.bName}</td>
-					<td><c:forEach begin="1" end="${dto.bIndent}">-_re</c:forEach>
+					<td><c:forEach begin="1" end="${dto.bIndent}">└『re』</c:forEach>
 						<a href="${cp}/board/contentView?bId=${dto.bId}">${dto.bTitle}</a></td>
 					<td>${dto.bDate}</td>
 					<td>${dto.bHit}</td>
@@ -53,9 +47,23 @@
 
 			</c:forEach>
 		</tbody>
-
-
-		<tfoot>
+</table>
+<hr/>
+<a class="btn btn-default pull-right" href="${cp}/board/writeView">글작성</a>
+<div class = "text-center">
+<ul class= "pagination">
+  <li> <c:if test="${page.prev}">
+						<a style="text-decoration: none;" href="${cp}/board/showList?pagenum=${page.getStartPage()-1}&contentnum=10">&laquo;</a>
+       </c:if>  </li>
+       <c:forEach begin="${page.getStartPage()}" end="${page.getEndPage()}" var="idx">
+						<li><a style="text-decoration: none;" href="${cp}/board/showList?pagenum=${idx}&contentnum=10">${idx}</a></li>
+					</c:forEach> 
+					<li><c:if test="${page.next}">
+						<a style="text-decoration: none" href="${cp}/board/showList?pagenum=${page.getEndPage()+1}&contentnum=10">&raquo;</a>
+						</c:if>
+						</li>
+</ul>
+<%-- 
 			<tr>
 				<td colspan="2">
 				<c:if test="${page.prev}">
@@ -63,7 +71,6 @@
 						
            					</c:if> 
 					<c:forEach begin="${page.getStartPage()}" end="${page.getEndPage()}" var="idx">
-						<%-- <a style="text-decoration: none;" href="javascript:page(${idx});">${idx}</a> --%>
 						<a style="text-decoration: none;" href="${cp}/board/showList?pagenum=${idx}&contentnum=10">${idx}</a>
 					</c:forEach> 
 					<c:if test="${page.next}">
@@ -73,10 +80,9 @@
 			</tr>
 			<tr>
 				<td colspan="5"><a href="${cp}/board/writeView">글작성</a></td>
-			</tr>
-		</tfoot>
-	</table>
-
+			</tr> --%>
+	
+</div>
 
 </body>
 </html>

@@ -47,7 +47,7 @@ update mvc_board set bName = #{bName}, bTitle = #{bTitle}, bContent = #{bContent
 	(SELECT bId,
 	bName,
 	bTitle,
-
+	bIndent,
 	bContent,
 	bDate,
 	bHit,ROW_NUMBER() OVER (order by bGroup desc, bStep asc) rnum
@@ -74,6 +74,6 @@ delete from mvc_comment where cId = #{cId}
 </delete>
 
 <update id="updateComment" parameterType="map">
-UPDATE mvc_comment SET content = #{content} where cId = #{cId};
+UPDATE mvc_comment SET content = #{content} where cId = #{cId}
 </update>
 </mapper>

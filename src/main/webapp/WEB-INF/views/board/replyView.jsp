@@ -5,10 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-	<table width="500" cellpadding="0" cellspacing="0" border="1">
+	<table class = "table table-hover">
 		<form action="${cp}/board/reply" method="post">
 			<input type="hidden" name="bId" value="${reply_view.bId}">
 			<input type="hidden" name="bGroup" value="${reply_view.bGroup}">
@@ -28,7 +32,7 @@
 			</tr>
 			<tr>
 				<td> 제목 </td>
-				<td> <input type="text" name="bTitle" value="(Re)${reply_view.bTitle}"></td>
+				<td> <input type="text" name="bTitle" value="${reply_view.bTitle}"></td>
 			</tr>
 			<tr>
 				<td> 내용 </td>
