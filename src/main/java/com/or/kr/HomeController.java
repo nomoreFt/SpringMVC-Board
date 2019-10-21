@@ -19,9 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-
+	
 	@ModelAttribute("cp")
 	public String getCp(HttpServletRequest req) {
+		req.getAttribute("h");
 		return req.getContextPath();
 	}
 	
