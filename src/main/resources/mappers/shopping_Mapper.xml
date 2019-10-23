@@ -14,7 +14,7 @@
 	</select>
 
 	<insert id="Reply" parameterType="map">
-	INSERT INTO REPLY (GDSNUM,USERID,REPNUM,REPCON)  VALUES (#{GDSNUM},#{USERID},REPLY_SEQ.NEXTVAL,#{REPCON})
+	INSERT INTO REPLY (gdsNum,userId,repNum,repCon)  VALUES (#{gdsNum},#{userId},REPLY_SEQ.NEXTVAL,#{repCon})
 	</insert>
 
 
