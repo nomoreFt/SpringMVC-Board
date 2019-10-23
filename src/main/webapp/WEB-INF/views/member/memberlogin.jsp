@@ -11,7 +11,7 @@
 	<h1>로그인</h1>
 	<hr>
 
-	<form action="${cp}/member/logincheck" method="get">
+	<form action="${cp}/member/logincheck" method="post">
 	
 		<!-- 아이디 -->
 		<div class="form-group">
@@ -30,7 +30,7 @@
 			<input type="submit" value="LOGIN">
 		</div>
 		<div>
-			<a href="whatid">아이디/</a> <a href="whatpw">비밀번호 찾기</a> <a href="${cp}/member/join">회원가입</a>
+			<a href="${cp}/member/whatid">아이디/</a> <a href="${cp}/member/whatpw">비밀번호 찾기</a> <a href="${cp}/member/join">회원가입</a>
 		</div>
 	</form>
 

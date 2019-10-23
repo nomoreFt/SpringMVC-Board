@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--  -->
+<mapper namespace="com.or.petspital.coupon.couponMapper">
+	
+	<select id = "couponNum" parameterType="String" resultType="CouponVO">
+		SELECT * From coupon WHERE mem_num=#{mem_num}
+	</select>
+	
+	<insert id="insertCoupon" parameterType="hashmap">
+		 INSERT INTO coupon (coupon_num, coupon_code, mem_num)
+      VALUES(coupon_seq.nextval, #{coupon_code}, #{mem_num})
+	</insert>
+	
+</mapper>

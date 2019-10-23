@@ -11,9 +11,9 @@
             <typeAlias alias="productVO" type="com.or.petspital.product.vo.ProductVO"></typeAlias>
              <typeAlias alias="commentVo" type="com.or.petspital.qna.Vo.CommentVo"></typeAlias>
              <typeAlias alias="reserveVO" type="com.or.petspital.reserve.vo.Reservation"></typeAlias>
-<typeAlias alias="memberVO"
-			type="com.or.petspital.member.vo.MemberVO"></typeAlias>
-      
+			<typeAlias alias="memberVO" type="com.or.petspital.member.vo.MemberVO"></typeAlias>
+     		 <typeAlias alias="couponVO" type="com.or.petspital.coupon.vo.CouponVO"></typeAlias>
+
       </typeAliases>
  
  	

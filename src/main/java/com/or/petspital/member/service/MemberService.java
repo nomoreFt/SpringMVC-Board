@@ -13,10 +13,13 @@ public interface MemberService {
 
 	public boolean logincheck(HttpServletRequest request,MemberVO member);
 	
-	public String loginIdCheck(MemberVO member);
-
-	//회원가입
-	public void insertUser(MemberVO vo);
-	//회원가입시 아이디 중복체크
 	public int id_Check(String user_id);
+	
+
+	public void insertUser(MemberVO vo);
+	public void updateUser(MemberVO vo);
+	
+	
+	public MemberVO what_id(MemberVO vo);
+	public MemberVO what_pw(MemberVO vo);
 }

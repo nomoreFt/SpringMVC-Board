@@ -4,27 +4,44 @@
 
 <mapper namespace="com.or.petspital.member.memberMapper">
 
-	<select resultType="memberVO" parameterType="hashmap" id="logincheck">
+	<select id="logincheck" resultType="memberVO" parameterType="hashmap" >
 		SELECT * 
-		FROM MEMBER
+		FROM member
 		WHERE USER_ID=#{user_id} AND USER_PW=#{user_pw}
 	</select>
 
-	<select resultType="String" parameterType="String" id="loginIdCheck">
-		SELECT user_pw 
-		FROM MEMBER
-		WHERE USER_ID = #{user_id} 
-	</select>
-
 	<insert parameterType="memberVO" id="insertUser">
-		INSERT INTO MEMBER(NUM,USER_NAME,USER_ID,USER_PW,USER_PHONE,USER_ADDR)
+		INSERT INTO MEMBER(USER_NUM,USER_NAME,USER_ID,USER_PW,USER_PHONE,USER_ADDR)
 		VALUES(num_SEQ.NEXTVAL,#{user_name}, #{user_id}, #{user_pw}, #{user_phone}, #{user_addr}) 
 	</insert>
-
+	
 	<select resultType="int" parameterType="String" id="idCheck">
 		SELECT count(*) 
 		FROM MEMBER
 		WHERE user_id=#{user_id} 
 	</select>
-
+	
+	<select id="what_id" parameterType="hashmap" resultType="memberVO">
+		SELECT * 
+		FROM MEMBER
+		WHERE USER_NAME=#{user_name} AND USER_PHONE=#{user_phone}
+	</select>
+	
+	<select id="what_pw" parameterType="hashmap" resultType="memberVO">
+		SELECT * 
+		FROM MEMBER
+		WHERE USER_ID=#{user_id} AND USER_NAME=#{user_name} AND USER_PHONE=#{user_phone}
+	</select>
+	
+	<select id="myPage" parameterType="String" resultType="memberVO">
+		SELECT * 
+		FROM MEMBER
+		WHERE USER_ID=#{user_id}
+	</select>
+	
+	<update id="updateUser" parameterType="memberVO">
+		UPDATE MEMBER 
+		SET USER_PW=#{user_pw},USER_PHONE=#{user_phone},USER_ADDR=#{user_addr}
+		WHERE USER_ID=#{user_id}
+	</update>
 </mapper>

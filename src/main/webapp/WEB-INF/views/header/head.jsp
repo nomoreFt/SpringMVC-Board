@@ -37,7 +37,7 @@
         <li><a href="${cp}/introduction">병원소개</a></li>
         <li><a href="${cp}/reserve/reserveDateForm">예약하기</a></li>
         <li><a href="#">상품구매</a></li>
-        <li><a href=" ${cp}/member/memberlogin">회원가입</a></li>
+        <li><a href=" ${cp}/member/memberlogin">로그인</a></li>
        
         <li><a href="${cp}/board/showList?pagenum=1&contentnum=10">Qna</a></li>
       </ul>

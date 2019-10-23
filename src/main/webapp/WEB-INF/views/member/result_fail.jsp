@@ -8,7 +8,7 @@
 </head>
 <body>
 <script type="text/javascript">
-	alert("회원가입 실패");
+	alert("입력하신 정보로 찾을 수 없습니다. 다시한번 정확하게 입력해주세요.");
 	history.go(-1);
 </script>
 

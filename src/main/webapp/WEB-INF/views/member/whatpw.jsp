@@ -4,49 +4,66 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>비밀번호 찾기</title>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <script type="text/javascript">
-   function check()
-   {
-      
-      if(!document.userInfo.id.value) {
-          alert("아이디를 입력해 주세요");
-          return false;
-      }
-      
-      if(!document.userInfo.name.value) {
-          alert("이름을 입력해 주세요");
-          return false;
-      }
-      
-      if(!document.userInfo.tel.value) {
-          alert("핸드폰번호를 입력해 주세요");
-          return false;
-      }
-      if (document.userInfo.tel.value.indexOf("-") >= 0) {
-          alert("핸드폰번호는'-'를 제외하고 입력해주세요.")
-          document.userInfo.tel.focus();
-          document.userInfo.tel.select();
-          return false;
-      }
-      
-      if (document.userInfo.tel.value.length>11) {
-         alert("핸드폰번호를 정확하게 입력해 주세요")
-      }
-   }
+
+	$('#btn').click(function() {
+		var user_id = $('#user_id').val();
+		var user_name = $('#user_name').val();
+		var user_phone = $('#user_phone').val();
+		
+	   if(user_id == null) {
+	       alert("아이디를 입력해 주세요");
+	       return false;
+	   }
+	   if(user_name == null) {
+	       alert("이름을 입력해 주세요");
+	       return false;
+	   }
+	   
+	   if(user_phone == null) {
+	       alert("핸드폰번호를 입력해 주세요");
+	       return false;
+	   }
+	   
+	   var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+		  if (!(regExp.test($('#user_phone').val()))){
+			alert("핸드폰번호를 정확하게 입력해 주세요")
+		    $("#user_phone").val("");
+		    $("#user_phone").focus();
+		    return false;
+		  }
+		  
+			/* $.ajax({
+				url : 'what_pw',
+				type : 'get',
+				success : function(data) {
+					if (data == null) {
+						alert("입력하신정보로 비밀번호없다. 돌아가");
+						return false;
+					} else {
+						return true;
+					}
+				}
+			}); */
+	});
+	
+	
 </script>
 
 </head>
 <body>
 
-	<form id = "form" method="post" action="memberSearchPw.do" name="userInfo" onsubmit="return check()">
-	<h1 class = "">비밀번호찾기</h1>
+	<form action = "${cp}/member/what_pw" method="post" name="whatpw" id="whatpw">
+	<h1>비밀번호찾기</h1>
 	<hr class = "line">
 	   <table>
 	      <tr>
 	         <td>
-	            <input class = "text" type="text" name="id" placeholder="아이디">
+	            <input class = "text" type="text" name="user_id" id="user_id" placeholder="아이디" required>
 	         </td>
 	         <td rowspan="3">
 	            <input id= "btn" type="submit" value="확인">
@@ -54,12 +71,12 @@
 	      </tr>
 	      <tr>
 	         <td>
-	            <input class = "text" type="text" name="name" placeholder="이름">
+	            <input class = "text" type="text" name="user_name" id="user_name" placeholder="이름" required>
 	         </td>
 	      </tr>
 	      <tr>
 	         <td>
-	            <input class = "text" type="text" name="tel" placeholder="핸드폰번호">
+	            <input class = "text" type="text" name="user_phone" id="user_phone" placeholder="핸드폰번호 ('-'를 포.함.한 번호를 입력해주세요)" required>
 	         </td>
 	      </tr>
 	   </table>
