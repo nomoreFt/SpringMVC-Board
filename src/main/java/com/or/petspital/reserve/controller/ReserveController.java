@@ -9,7 +9,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.spi.RepositorySelector;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -143,17 +143,17 @@ public class ReserveController {
 		
 		int result = 0;
 		
-	if(date > today) { //¿¹¾à³¯Â¥°¡ ¿À´Ã ÀÌÈÄÀÌ¸é ¿¹¾àÃë¼Ò °¡´É
+	if(date > today) { //ï¿½ï¿½ï¿½à³¯Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			
-			result = service.resDelete(res_num); //¿¹¾àÀÌ ¼º°øÀûÀ¸·Î Ãë¼ÒµÆÀ¸¸é 1 ¹ÝÈ¯
+			result = service.resDelete(res_num); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ 1 ï¿½ï¿½È¯
 			
 			System.out.println("return : " +result);
 			return result; //1
 			
-		} else { //¿¹¾à³¯Â¥°¡ ¿À´ÃÀÌ°Å³ª ¿À´Ã ÀÌÀüÀÌ¸é ¿¹¾àÃë¼Ò ºÒ°¡´É
+		} else { //ï¿½ï¿½ï¿½à³¯Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½
 			
 			System.out.println("return : " +result);
-			return result; //¿¹¾à Ãë¼Ò°¡ ºÒ°¡ÇÏ¸é Ãë¼ÒµÈ°ÍÀÌ ¾øÀ¸´Ï ±×´ë·Î 0 ¹ÝÈ¯
+			return result; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò°ï¿½ ï¿½Ò°ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ÒµÈ°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ 0 ï¿½ï¿½È¯
 		}
 	}
 	
