@@ -11,7 +11,7 @@ public class MemLoginInterceptor extends HandlerInterceptorAdapter{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("test branch");
+		
 		HttpSession session = request.getSession(false);
 		
 		if(session != null) { //세션이 존재할 경우
