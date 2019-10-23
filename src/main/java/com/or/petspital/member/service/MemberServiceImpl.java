@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.*;
 import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,42 +23,33 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDAO memDao;
-	private SqlSessionTemplate SqlSessin;
 	
 	@Override
 	public boolean logincheck(HttpServletRequest request, MemberVO member) {
 		
-		MemberVO mem = memDao.logincheck(member);
+		MemberVO mem = memDao.logincheck(member); 
 		
 		if(mem != null) {
-			//로그인성ㄱ동
 			HttpSession session = request.getSession();
 			session.setAttribute("memLoginOk", mem.getUser_id());
 			return true;
-			
 		}else {
 			
 			return false;
 		}
 	}
 
-
-	@Override
-	public String loginIdCheck(MemberVO member) {
-		
-		String id = memDao.loginIdCheck(member);
-		
-		if(member.getUser_id().equals(id)) {
-			//중복
-			return "중복";
-			
-		} else {
-			//중복없음
-			return "없음";
-
-		}
+	public MemberVO what_id(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return memDao.what_id(vo);
 		
 	}
+
+	public MemberVO what_pw(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return memDao.what_pw(vo);
+	}
+	
 
 	@Override
 	public void insertUser(MemberVO vo) {
@@ -71,6 +61,19 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return memDao.id_Check(user_id);
 		}
+
+	public void updateUser(MemberVO vo) {
+		// TODO Auto-generated method stub
+		memDao.updateUser(vo);
+	}
+
+/*	public MemberVO myPage(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return memDao.myPage(vo);
+	}*/
+
+
+
 
 
 

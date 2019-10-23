@@ -17,6 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<!-- <typeAliases> <typeAlias alias="boardVo" type="com.javalec.spring_pjt_board.vo.BoardVo"></typeAlias> 
 		</typeAliases> -->
 
+
 	<typeAliases>
 		<typeAlias type="com.or.petspital.shopping.vo.ShoppingVO"
 			alias="shop" />
@@ -38,6 +39,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!-- <typeAliases> <typeAlias alias="boardVo" type="com.javalec.spring_pjt_board.vo.BoardVo"></typeAlias> 
 		</typeAliases> -->
+
 
 
 

@@ -19,7 +19,7 @@
 
 <!-- Slide Show -->
 <section>
-  <img class="fakeimg"   src="${cp}/resources/image/1.jpg"
+  <img class="fakeimg"   src="${cp}/resources/image/3.jpg"
   style="width:100%">
   <img class="fakeimg" src="${cp}/resources/image/2.jpg"
   style="width:100%">

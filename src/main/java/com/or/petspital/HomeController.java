@@ -33,7 +33,10 @@ public class HomeController {
 	public String main() {
 		return "main";
 	}
-	
+	@RequestMapping(value = "/introduction", method = RequestMethod.GET)
+	public String introduction() {
+		return "introduction";
+	}
 	@RequestMapping(value = "/chat/chatbot", method = RequestMethod.GET)
 	public String chatbot() {
 		return "chat/chatbot";

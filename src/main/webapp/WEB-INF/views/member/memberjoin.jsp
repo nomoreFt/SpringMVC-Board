@@ -52,8 +52,8 @@
 						      return false;
 						    }
 						 
-						  var phonePattern = /^\d{3}-\d{3,4}-\d{4}$/;
-						  if (!(phonePattern.test($('#user_phone').val()))){
+						 var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+						  if (!(regExp.test($('#user_phone').val()))){
 						    $('#phone_check').text('잘못된 입력입니다.');
 						    $("#phone_check").css("color","red");
 						    $("#user_phone").val("");
@@ -144,7 +144,7 @@
 		</div>
 		<!-- 휴대전화 -->
 		<div class="form-group">
-			<label for="user_phone">휴대전화 ('-' 없이 번호만 입력해주세요)</label> 
+			<label for="user_phone">휴대전화 ('-'를 포.함.한 번호를 입력해주세요)</label> 
 				<input type="text" class="form-control" id="user_phone" name="user_phone" placeholder="Phone Number" required>
 			<div class="check_font" id="phone_check"></div>
 		</div>

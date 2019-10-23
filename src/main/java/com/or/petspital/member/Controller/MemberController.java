@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.or.petspital.member.service.MemberService;
 import com.or.petspital.member.service.MemberServiceImpl;
 import com.or.petspital.member.vo.MemberVO;
+import com.or.petspital.reserve.service.ReserveService;
 
 @Controller
 @RequestMapping("/member")
@@ -39,7 +40,33 @@ public class MemberController {
 		return "member/memberjoin";
 	}
 	
+	@RequestMapping("/whatid")
+	public String memberwhatid() {
+		return "member/whatid";
+	}
 	
+	@RequestMapping("/whatpw")
+	public String memberwhatpw() {
+		return "member/whatpw";
+	}
+	
+	
+	@RequestMapping("/delete")
+	public String memberdeletego() {
+		return "member/memberDelete";
+	}
+	
+	
+	@RequestMapping("/mypage")
+	public ModelAndView membermypage(MemberVO vo) {
+		ModelAndView mav = new ModelAndView();
+		//MemberVO mem = service.myPage(vo);
+		
+		//mav.addObject("mem",mem);
+		mav.setViewName("member/mypage");
+		return mav;
+	}
+
 	@RequestMapping("/logincheck")
 	public ModelAndView logincheck(HttpServletRequest request, MemberVO member) {
 		
@@ -50,23 +77,64 @@ public class MemberController {
 		if(result == true) {
 			mav.setViewName("index");
 		} else {
-			mav.setViewName("member/memberloginfalse");
+			mav.setViewName("member/memberloginFail");
 		}
 		
 		return mav;
 	}
 
 	@RequestMapping(value = "/insertUser")
-	public String insertUser(MemberVO vo) {
+	public String insertUser(HttpSession session, MemberVO vo) {
 		
 		service.insertUser(vo);
+		session.setAttribute("memJoinOk", vo.getUser_id());
+		session.setAttribute("coupon", "coupon");
 		
-		return "member/memberjoinok";
+		return "coupon/insertCoupon";
 	}
+	
+	@RequestMapping(value = "/updateUser")
+	public String updateUser(MemberVO vo) {
+		
+		service.updateUser(vo);
+		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/what_id", method=RequestMethod.POST)
+	public ModelAndView what_id(MemberVO vo) {
+		
+		ModelAndView mav = new ModelAndView();
+		
+		MemberVO mem = service.what_id(vo);
+		
+		if(mem == null) {
+			mav.setViewName("member/result_fail");
+		} else {
+			mav.addObject("mem", mem);
+			mav.setViewName("member/result_id");
+		}
+		return mav;
+	}
+	
+	@RequestMapping(value = "/what_pw")
+	public ModelAndView what_pw(MemberVO vo) {
+		
+		ModelAndView mav = new ModelAndView();
+		
+		MemberVO mem = service.what_pw(vo);
+		
+		if(mem == null) {
+			mav.setViewName("member/result_fail");
+		}else {
+			mav.addObject("mem", mem);
+			mav.setViewName("member/result_pw");
+		}
+			return mav;
+	}	
 	
 	
 
-	// id 중복 체크 컨트롤러
 		@RequestMapping(value = "/id_Check")
 		@ResponseBody
 		public int id_Check(@RequestParam("user_id") String user_id) {

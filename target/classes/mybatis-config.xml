@@ -18,21 +18,17 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</typeAliases> -->
 
 	<typeAliases>
-		<typeAlias type="com.or.petspital.shopping.vo.ShoppingVO"
-			alias="shop" />
-		<typeAlias type="com.or.petspital.shopping.vo.DetailVO"
-			alias="detail" />
-		<typeAlias type="com.or.petspital.shopping.vo.ReplyVO"
-			alias="reply" />
-			
-			
-		<typeAlias alias="reserveVO"
-			type="com.or.petspital.reserve.vo.Reservation"></typeAlias>
-		<typeAlias alias="productVO"
-			type="com.or.petspital.product.vo.ProductVO"></typeAlias>
-		<typeAlias alias="memberVO"
-			type="com.or.petspital.member.vo.MemberVO"></typeAlias>
 
+
+     <typeAliases>
+            <typeAlias alias="boardVo" type="com.or.petspital.qna.Vo.BoardVo"></typeAlias>
+            <typeAlias alias="productVO" type="com.or.petspital.product.vo.ProductVO"></typeAlias>
+             <typeAlias alias="commentVo" type="com.or.petspital.qna.Vo.CommentVo"></typeAlias>
+             <typeAlias alias="reserveVO" type="com.or.petspital.reserve.vo.Reservation"></typeAlias>
+			<typeAlias alias="memberVO" type="com.or.petspital.member.vo.MemberVO"></typeAlias>
+     		 <typeAlias alias="couponVO" type="com.or.petspital.coupon.vo.CouponVO"></typeAlias>
+
+      </typeAliases>
 	</typeAliases>
 
 
@@ -41,6 +37,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 
 
+      
+   
+ 
+ 	
 
 </configuration>
 
