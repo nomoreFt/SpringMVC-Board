@@ -22,6 +22,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <style type="text/css">
@@ -76,7 +80,7 @@
 
 </head>
 <body>
-
+<%@ include file="/WEB-INF/views/header/head.jsp" %>
     <p></p>
     <h1 align="center">10월 예약 OPEN</h1>
     <h3 align="center">예약 날짜를 선택하세요.</h3>
@@ -130,6 +134,6 @@
 		<input type="submit" value="다음" onclick="return check()">
 	</form>
 	</div>
-	
+<%@ include file="/WEB-INF/views/footer/foot.jsp" %>	
 </body>
 </html>
