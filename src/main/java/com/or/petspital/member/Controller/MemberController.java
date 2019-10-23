@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.or.petspital.member.service.MemberService;
 import com.or.petspital.member.service.MemberServiceImpl;
 import com.or.petspital.member.vo.MemberVO;
-import com.or.petspital.reserve.service.ReserveService;
 
 @Controller
 @RequestMapping("/member")

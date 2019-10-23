@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.spi.RepositorySelector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -47,7 +48,7 @@ public class ReserveController {
 		
 		ModelAndView mav = new ModelAndView();
 		session.setAttribute("res_date", reserveVO.getRes_date());
-
+	
 		mav.setViewName("/reserve/reserveTimeForm");
 		
 		return mav;
@@ -142,17 +143,17 @@ public class ReserveController {
 		
 		int result = 0;
 		
-	if(date > today) { //я┐╜я┐╜я┐╜р│п┬ея┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜╠╕я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜
+	if(date > today) { //┐╣╛р│п┬е░б ┐└┤├ └╠╚─└╠╕щ ┐╣╛р├ы╝╥ ░б┤╔
 			
-			result = service.resDelete(res_num); //я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜╥╡я┐╜я┐╜я┐╜я┐╜я┐╜ 1 я┐╜я┐╜╚п
+			result = service.resDelete(res_num); //┐╣╛р└╠ ╝║░°└√└╕╖╬ ├ы╝╥╡╞└╕╕щ 1 ╣▌╚п
 			
 			System.out.println("return : " +result);
 			return result; //1
 			
-		} else { //я┐╜я┐╜я┐╜р│п┬ея┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜╠░┼│я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜╠╕я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╥░я┐╜я┐╜я┐╜
+		} else { //┐╣╛р│п┬е░б ┐└┤├└╠░┼│к ┐└┤├ └╠└№└╠╕щ ┐╣╛р├ы╝╥ ║╥░б┤╔
 			
 			System.out.println("return : " +result);
-			return result; //я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜╥░я┐╜ я┐╜╥░я┐╜я┐╜╧╕я┐╜ я┐╜я┐╜╥╡╚░я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╫┤я┐╜я┐╜ 0 я┐╜я┐╜╚п
+			return result; //┐╣╛р ├ы╝╥░б ║╥░б╟╧╕щ ├ы╝╥╡╚░═└╠ ╛°└╕┤╧ ▒╫┤ы╖╬ 0 ╣▌╚п
 		}
 	}
 	

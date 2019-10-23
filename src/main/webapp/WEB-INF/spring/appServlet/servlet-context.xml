@@ -33,6 +33,13 @@
 	
 	<context:component-scan base-package="com.or.petspital" />
 	
-	
+	<interceptors>
+		<interceptor>
+			<mapping path="/reserve/**"/>
+			<mapping path="/coupon/**"/>
+			<exclude-mapping path="reserve/reserveDateForm"/>
+			<beans:bean class="com.or.petspital.reserve.interceptor.MemLoginInterceptor"/>
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>

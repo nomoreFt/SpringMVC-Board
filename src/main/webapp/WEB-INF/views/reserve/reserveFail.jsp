@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
 
 <script type="text/javascript">
-	alert("ì´ë¯¸ ì˜ˆì•½ë˜ì–´ ìˆìŠµë‹ˆë‹¤.");
+	alert("ÀÌ¹Ì ¿¹¾àµÇ¾î ÀÖ½À´Ï´Ù.");
 	history.go(-1);
 </script>
 

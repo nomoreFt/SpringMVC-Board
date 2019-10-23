@@ -33,7 +33,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="${cp}	">Home</a></li>
+        <li class="active"><a href="${cp}">Home</a></li>
         <li><a href="#">병원소개</a></li>
         <li><a href="${cp}/reserve/reserveDateForm">예약하기</a></li>
         <li><a href="#">상품구매</a></li>
