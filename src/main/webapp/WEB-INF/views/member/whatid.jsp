@@ -4,52 +4,75 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>아이디 찾기</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <script type="text/javascript">
 
-	function check()
-	{
-	   if(!document.userInfo.name.value) {
+	$('#btn').click(function() {
+		//var user_name = $('#user_name').val();
+		//var user_phone = $('#user_phone').val();
+		
+	   if($('#user_name').val() == null) {
 	       alert("이름을 입력해 주세요");
+		    $("#user_name").focus();
 	       return false;
 	   }
 	   
-	   if(!document.userInfo.tel.value) {
+	   if($('#user_phone').val() == null) {
 	       alert("핸드폰번호를 입력해 주세요");
-	       return false;
-	   }
-	   if (document.userInfo.tel.value.indexOf("-") >= 0) {
-	       alert("핸드폰번호는'-'를 제외하고 입력해주세요.")
-	       document.userInfo.tel.focus();
-	       document.userInfo.tel.select();
+		    $("#user_phone").focus();
 	       return false;
 	   }
 	   
-	   if (document.userInfo.tel.value.length>11) {
-	      alert("핸드폰번호를 정확하게 입력해 주세요")
-	   }
-	}
+	   var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+		  if (!(regExp.test($('#user_phone').val()))){
+			alert("핸드폰번호를 정확하게 입력해 주세요")
+		    $("#user_phone").val("");
+		    $("#user_phone").focus();
+		    return false;
+		  }
+ 				
+ 				var user_name = $("#user_name").val();
+ 				var user_phone = $("#user_phone").val();
+		  
+/*  			$.ajax({
+ 				
+				url : 'what_id?user_name='+user_name+'&user_phone='+user_phone,
+				type : 'post',
+				success : function(data) {
+					if (data == null) {
+						alert("입력하신정보로 아이디없다. 돌아가");
+						return false;
+					} else {
+						return true;
+					}
+				}
+			});  */
+	});
+	
+	
 </script>
 
 </head>
 <body>
-<form id = "form" method="post" action="memberSearchId.do" name="userInfo" onsubmit="return check()">
+
+	<form action = "${cp}/member/what_id" method="post" name="whatid" id="whatid">
 
 <h1>아이디찾기</h1>
 <hr class="line">
    <table>
       <tr>
          <td>
-            <input class="text" type="text" name="name" placeholder="이름">
+            <input class="text" type="text" name="user_name" id="user_name" placeholder="이름" required>
          </td>
          <td rowspan="2">
-            <input id = "btn"type="submit" value="확인">
+            <input type="submit" id="btn" value="확인">
          </td>
       </tr>
       <tr>
          <td>
-            <input class="text" type="text" name="tel" placeholder="핸드폰번호">
+            <input class="text" type="text" name="user_phone" id = "user_phone" placeholder="핸드폰번호 ('-'를 포.함.한 번호를 입력해주세요)" required>
          </td>
       </tr>
    </table>
