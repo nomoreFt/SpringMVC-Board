@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.or.petspital.reserve.reserveMapper">
+
+	<insert id="resInsert" parameterType="reserveVO">
+		INSERT INTO res_db (res_num, res_id, res_date, res_time, res_memo)
+		VALUES(res_db_seq.nextval, #{res_id}, #{res_date}, #{res_time}, #{res_memo})
+	</insert>
+	
+	<select id="resSelectDate" parameterType="hashmap" resultType="reserveVO">
+		SELECT * FROM res_db WHERE res_date = #{res_date}
+	</select>
+	
+	<select id="resSelectTime" parameterType="hashmap" resultType="reserveVO">
+		SELECT * FROM res_db WHERE res_date = #{res_date} AND res_time = #{res_time}
+	</select>
+	
+	<select id="resSelectList" parameterType="hashmap" resultType="reserveVO">
+		SELECT * FROM res_db WHERE res_id = #{res_id} ORDER BY res_date DESC
+	</select>
+	
+	<select id="resSelectMemo" parameterType="hashmap" resultType="reserveVO">
+		SELECT * FROM res_db WHERE res_num = #{res_num}
+	</select>
+	
+	<update id="resUpdateMemo" parameterType="map">
+		UPDATE res_db SET res_memo = #{res_memo} WHERE res_num = #{res_num}
+	</update>
+
+	<select id="time_check" parameterType="hashmap" resultType="int">
+		SELECT count(*) FROM res_db WHERE res_date=#{res_date} AND res_time=#{res_time}
+	</select>
+	
+	<delete id="resDelete" parameterType="hashmap">
+		DELETE FROM res_db WHERE res_num = #{res_num}
+	</delete>
+
+
+</mapper>

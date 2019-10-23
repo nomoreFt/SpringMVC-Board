@@ -14,7 +14,7 @@
 <script type="text/javascript">
 </script>
 </head>
-
+<%@ include file="/WEB-INF/views/header/head.jsp" %>
 
 <body>
 
@@ -59,6 +59,6 @@
 						</li>
 </ul>
 </div>
-
+<%@ include file="/WEB-INF/views/footer/foot.jsp" %>
 </body>
 </html>

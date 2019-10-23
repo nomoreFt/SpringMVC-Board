@@ -17,8 +17,8 @@
 </head>
 <body>
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>My First Bootstrap Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
+  <h1>Petspital</h1>
+  <p>소중한 아가들을 위한 최고의 선택!</p> 
 </div>
 
 <nav class="navbar navbar-inverse">
@@ -29,13 +29,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">Petspital</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li class="active"><a href="${cp}	">Home</a></li>
+        <li><a href="#">병원소개</a></li>
+        <li><a href="${cp}/reserve/reserveDateForm">예약하기</a></li>
+        <li><a href="#">상품구매</a></li>
+        <li><a href=" ${cp}/member/memberlogin">회원가입</a></li>
+       
+        <li><a href="${cp}/board/showList?pagenum=1&contentnum=10">Qna</a></li>
       </ul>
     </div>
   </div>

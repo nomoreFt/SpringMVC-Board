@@ -31,7 +31,7 @@
 	</beans:bean>
 	
 	
-	<context:component-scan base-package="com.or.kr" />
+	<context:component-scan base-package="com.or.petspital" />
 	
 	
 	
